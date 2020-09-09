@@ -10,6 +10,14 @@
         <!--Internal CSS Implementation-->
         <style>
             /**Internal CSS Implementation**/
+            
+            @font-face {
+            font-family: 'calibril';
+            src:  url('fonts/calibril.woff2') format('woff2'),
+                    url('fonts/calibril.woff') format('woff');
+            }
+
+
             html, body, div, span, object, iframe,
             h1, h2, h3, h4, h5, h6, p, blockquote, pre,
             abbr, address, cite, code,
@@ -32,7 +40,8 @@
             }
 
             body {
-            line-height:1;
+                line-height:1;
+                font-family: 'calibril';
             }
             #container{
                 width: 900px;
@@ -56,6 +65,36 @@
 
             main p{
                 font-weight: bolder;
+            }
+            main img {
+                display: block;
+                margin: auto;
+                margin-top: 20px;
+            }
+            hr {
+                border-top: 1px solid black;
+            }
+            li {
+                margin: 2%;
+            }
+            input[type="text"] {
+                border: none;
+                border-bottom: 1px solid black;
+                width: 50%;
+                float: right;
+            }
+
+            footer {
+                width: 100%;
+                height: 90px;
+                background-color: lightgrey;
+                margin-top: 32px;
+                margin-bottom: 16px;
+            }
+            footer img {
+                float: right;
+                margin-top: 28px;
+                margin-right: 16px;
             }
         </style>
 
@@ -83,7 +122,7 @@
             </main>
             <footer>
 
-                <img src="img/itworksheets[logo].png" alt="logo">
+                <img src="img/itworksheets[logo].png" width="220" alt="logo">
             </footer>
         </div><!--End of div container-->
     </body>
