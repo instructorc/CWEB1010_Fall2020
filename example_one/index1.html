@@ -11,6 +11,13 @@
 
         <!--Internal CSS Styling-->
         <style>
+
+            @font-face {
+            font-family: 'calibril';
+            src:  url('fonts/calibril.woff2') format('woff2'),
+                    url('fonts/calibril.woff') format('woff');
+            }
+
             html, body, div, span, object, iframe,
             h1, h2, h3, h4, h5, h6, p, blockquote, pre,
             abbr, address, cite, code,
@@ -33,7 +40,8 @@
             }
 
             body {
-            line-height:1;
+                line-height:1;
+                font-family: 'calibril';
             }
             #container {
                 width: 900px;
@@ -43,11 +51,11 @@
                 text-align: center;
             }
             h1 {
-                font-size: 26px;
-                line-height: 1.4;
+                font-size: 24px;
+                line-height: 1.2;
             }
             h2 {
-                font-size: 20px;
+                font-size: 19px;
                 font-weight: 100;
                 line-height: 1.3;
             }
@@ -64,6 +72,32 @@
                 margin-top: 20px;
             }
 
+            hr {
+                border-top: 1px solid black;
+            }
+            li {
+                margin: 1.7%;
+            }
+
+            input[type="text"] {
+                border: none;
+                border-bottom: 1px solid black;
+                width: 50%;
+                float: right;
+                outline: none;
+            }
+            footer {
+                width: 100%;
+                height: 90px;
+                background-color: lightgrey;
+                margin-top: 3%;
+                margin-bottom: 2%;
+            }
+            footer img {
+                float: right;
+                margin-top: 35px;
+                margin-right: 15px;
+            }
 
         </style>
     </head>
@@ -88,7 +122,7 @@
                 </ol>
             </main>
             <footer>
-                <img src="img/itworksheets[logo].png" alt="logo">
+                <img src="img/itworksheets[logo].png" width="220" alt="logo">
             </footer>
         </div>
     </body>
