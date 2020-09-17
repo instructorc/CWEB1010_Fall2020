@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Attribute Activity</title>
+        <!--Internal CSS Implementation-->
+        <style>
+            #navstruct{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            a{
+                text-decoration: none;
+            }
+            a[href*="history"]{
+                border: 2px solid black;
+            }
+            
+            a:hover{
+                background-color: orangered;
+                color: white;
+            }
+            a:link{
+                color: olivedrab;
+            }
+            a:visited{
+                color: yellow;
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav id="navstruct">
+            <ul> 
+                <li><a href="https://www.ikea.com">Home </a></li>
+                <li><a href="store_history.html">Story History </a></li>
+                <li><a href="unit_history.html">Unit History </a></li>
+            </ul>
+            <img src="https://reacttees.com/images/logo1.png" width="190" alt="logo" />
+        </nav>
+    </body>
+</html>
