@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+       <head>
+		<!--The head tag communicates information about the html document -->
+        <title>CSS Flexbox </title>
+        <style>
+            #wrapper{
+                width: 80%;
+                margin: auto;
+                border: 3px solid orangered;
+                height: 100vh;
+                display: grid;
+                grid-template-columns: 1fr 3fr 1fr;
+                grid-template-rows: 1fr 3fr 1fr;
+               
+            }
+            .child_items{
+                border: 3px solid green;
+
+            }
+        
+         
+            header{
+                grid-column-start: 1;
+                grid-column-end: -1;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+            
+            footer{
+                grid-column-start: 1;
+                grid-column-end: -1;
+                grid-row-start: 3;
+                grid-row-end: 2;
+            }
+        
+        
+        </style>
+	</head>
+	<body>
+        <div id="wrapper"> <!--Container-->
+            <header></header>
+            <aside class="child_items"> #1 </aside>
+            <aside class="child_items"> #2 </aside>
+            <aside class="child_items"> #3 </aside>
+            <footer></footer>
+        </div><!--Closing tag for container-->
+	</body>
+</html>
