@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+       <head>
+		<!--The head tag communicates information about the html document -->
+        <title>CSS Flexbox </title>
+        <style>
+            #wrapper{
+                width: 80%;
+                margin: auto;
+                border: 3px solid orangered;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .child_item{
+                border: 3px solid green;
+                height: 325px;
+                flex: 1 0 auto;
+                margin: 10px;
+            }
+            .grow{
+                flex-grow: 3;
+            }
+
+            header, footer{
+                height: 150px;
+                border: 3px solid green;
+                flex: 1 0 100%;
+            }
+        
+        </style>
+	</head>
+	<body>
+        <div id="wrapper"><!--Container-->
+            <header></header>
+            <aside class="child_item"> #1 </aside>
+            <aside class="child_item grow"> #2 </aside>
+            <aside class="child_item"> #3 </aside>
+            <footer></footer>
+        </div>
+	</body>
+</html>

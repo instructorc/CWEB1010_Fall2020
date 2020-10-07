@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+       <head>
+		<!--The head tag communicates information about the html document -->
+        <title>CSS Grid </title>
+        <style>
+            #wrapper{
+                width: 80%;
+                margin: auto;
+                border: 3px solid orangered;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: 1fr 2fr 1fr;
+                height: 100vh;
+            }
+
+            #child_item1{
+                border: 3px solid purple;
+                margin: 10px;
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 3;
+
+            }
+            #child_item2{
+                border: 3px solid palegreen;
+                grid-column-start: 2;
+                grid-column-end: 4;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                margin: 10px;
+            }
+            #child_item3{
+                border: 3px solid tomato;
+                grid-column-start: 1;
+                grid-column-end: -1;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                margin: 10px;
+            }
+
+
+            header{
+                height: 150px;
+                border: 3px solid yellow;
+                grid-column-start: 1;
+                grid-column-end: -1;
+                grid-row-start: 1;
+                grid-row-end: 2;
+
+            }
+            footer{
+                height: 150px;
+                border: 3px solid blue;
+            }
+        
+        </style>
+	</head>
+	<body>
+        <div id="wrapper"><!--Container-->
+            <header></header>
+            <aside id="child_item1"> #1 </aside>
+            <aside id="child_item2"> #2 </aside>
+            <aside id="child_item3"> #3 </aside>
+            <footer></footer>
+        </div>
+	</body>
+</html>
