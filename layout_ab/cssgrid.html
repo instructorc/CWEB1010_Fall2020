@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+       <head>
+		<!--The head tag communicates information about the html document -->
+        <title>CSS Grid</title>
+        <!--Internal CSS-->
+        <style>
+            #container{
+                width: 80%;
+                margin: auto;
+                border: 3px solid orangered;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr); /**1fr 1fr 1fr 1fr**/
+                grid-template-rows: 1fr 3fr 1fr ;
+                height: 100vh;
+
+            }
+        
+            #child_item1{
+                border: 2px solid blue;
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+            #child_item2{
+                border: 2px solid black;
+                grid-column-start: 2;
+                grid-column-end: 4;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+            #child_item3{
+                
+                border: 2px solid blue;
+                grid-column-start: 4;
+                grid-column-end: -1;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            
+
+            }
+
+
+            header{
+                border: 2px solid olivedrab;
+                grid-column-start: 1;
+                grid-column-end: 5;
+                grid-row-start: 1;
+                grid-row-end: 2;
+                
+            }
+        </style>
+	</head>
+	<body>
+        <div id="container">
+            <!--grid items-->
+            <header></header>
+            <aside id="child_item1"> #1 </aside>
+            <aside id="child_item2"> #2 </aside>
+            <aside id="child_item3"> #3 </aside>
+            <footer></footer>
+        </div><!--Closing div id container-->
+	</body>
+</html>
