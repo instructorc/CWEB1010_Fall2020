@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'MyWebFont';
+    src: url('font/montserrat.eot'); /* IE9 Compat Modes */
+    src: url('font/montserrat.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('font/montserrat.woff2') format('woff2'), /* Super Modern Browsers */
+         url('font/montserrat.woff') format('woff'), /* Pretty Modern Browsers */
+         url('font/montserrat.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('font/montserrat.svg#svgFontName') format('svg'); /* Legacy iOS */
+  }
+
+
+
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -22,7 +35,7 @@ html{
 }
 body{
     line-height:1;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;  /**Default Font**/
 }
 a{
     text-decoration: none; 

@@ -7,8 +7,10 @@
         <meta name="keywords" content="Renters Profile Page, MPLS renter profile, Apartment renter">
         <meta name="author" content="C.Fulton">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <!--Internal CSS-->
         <style>
+            
             #profile_top_section{
                 width: 100%;
                 height: 300px;
@@ -63,7 +65,7 @@
                 width: 90%;
                 margin: auto;
                 grid-template-columns: repeat(4, 1fr);
-                grid-template-rows: 100px 2fr 3fr;
+                grid-template-rows: 125px 2fr 3fr;
               
                 border: 2px solid green;
 
@@ -81,9 +83,19 @@
                 grid-row-end: 2;
                 min-height: 100px;
             }
+
+            #profile_nav img {
+                width: 24%;
+                min-width: 50px;
+                max-width: 17%;
+                margin: auto;
+                margin-top: .8em;
+                display: block;
+            }
             #agent_overview{
                 display: flex;
                 flex-wrap: wrap;
+                padding-top: 5%;
                 border: 2px solid purple;
                 grid-column-start: 1;
                 grid-column-end: -1;
@@ -96,10 +108,26 @@
                 min-height: 75px;
             }
             #agent_overview .agent_stat_box{
-                flex: 1 0 350px;
-                box-shadow: 5px 5px 10px #333;
-                height: 325px;
+                flex: 1 0 215px;
+                box-shadow: 7px 5px 7px #aaa;
+                height: auto;
+                padding-bottom: 3%;
                 margin: 2%;
+                background-color: #F7F7F7;
+            }
+            #agent_overview h4 {
+                text-align: center;
+                font-size: 5vw;
+                padding-top: 20px;
+
+            }
+
+            #agent_overview h5 {
+                text-align: center;
+                text-transform: uppercase;
+                margin-top: 24px;
+                font-size: 1.8vw;
+
             }
             #agent_prospective_renter_info{
                 border: 2px solid blue;
@@ -111,14 +139,15 @@
 
             #profile_nav #profile_logo{
                 border: 2px solid red;
-                flex: 1 0 150px;
+                flex: 1 0 auto;
             }
             #profile_nav a{
                 border: 2px solid red;
-                flex: 1 0 100px;
+                flex: 1 0 auto;
                 text-align: center;
+                padding-top: .5em;
                 padding: 2%;
-                font-size: 1.5em;
+                font-size: 1.7em;
             }
             #profile_nav #notification{
                 border: 2px solid red;
@@ -132,6 +161,7 @@
                 grid-template-rows: 1fr;
                 height: 400px;
                 width: 100%;
+                background-color: #F7F7F7;
             }
             #grid_renter_info #info{
                 grid-column-start: 1;
@@ -156,6 +186,57 @@
                 height: 340px;
             }
 
+                        /* smaller than 1024 pixels */
+            @media screen and (max-width: 1024px) {
+                #profile_nav{
+                    background-color: #cd0000;
+                }
+                #profile_nav #profile_logo{
+                display:none;
+                }
+                #profile_nav #notification{
+                display: none;
+                }
+
+     
+            }
+            /* smaller than 768 pixels */
+            @media screen and (max-width: 768px) {
+                #profile_grid_container{
+                    display: grid;
+                    width: 90%;
+                    margin: auto;
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-rows: auto 2fr 3fr;
+                
+                    border: 2px solid green;
+
+                }
+                #profile_nav{
+                    background-color: blue;
+                    flex-wrap: wrap;
+                    height: 100%;
+                }
+                #profile_nav a{
+                    border: 2px solid red;
+                    flex: 1 0 305px;
+                    text-align: center;
+
+                    padding: 2%;
+                    font-size: 1.7em;
+                }
+                #profile_top_section {
+                    background-size: cover;
+                }
+
+            }
+            /* smaller than 480 pixels */
+            @media screen and (max-width: 480px) {
+                #profile_nav{
+                    background-color: red;
+                }
+            }
+
 
         </style>
         <!--Link to external CSS-->
@@ -177,18 +258,27 @@
             <!--Grid items total of 3-->
             <nav id="profile_nav">
                 <div id="profile_logo">
-                    <img src="" alt="mpls renters logo">
+                    <img src="img/logo.png" alt="mpls renters logo">
                 </div>
                 <a href=""> Favorites</a>
                 <a href=""> Offer List</a>
                 <a href=""> Profile Settings</a>
-                <div id="notification"><img src="" alt="notification symbol"></div>
+                <div id="notification"><img src="img/notification_icon.PNG" alt="notification symbol"></div>
             </nav>
             <section id="agent_overview">
                 <h3>Overview</h3>
-                <div class="agent_stat_box"></div>
-                <div class="agent_stat_box"></div>
-                <div class="agent_stat_box"></div>
+                <div class="agent_stat_box">
+                    <h4>7</h4>
+                    <h5>Active Prospects</h5>
+                </div>
+                <div class="agent_stat_box">
+                    <h4>12</h4>
+                    <h5>Scheduled Tours</h5>
+                </div>
+                <div class="agent_stat_box">
+                    <h4>44</h4>
+                    <h5>Offers</h5>
+                </div>
             </section>
             <section id="agent_prospective_renter_info">
                 <h3>Prospective Renters</h3>
