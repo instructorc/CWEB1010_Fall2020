@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animation Activity</title>
+        <style>
+
+            /**Initial Default State**/
+            #box{
+                background-color: red;
+                height: 100px;
+                width: 100px;
+                /**Steps 4 - 6**/
+                transition: all 4s ease-in-out;
+
+            }
+            /**Step 2 add a hover pseudo class**/
+            /**Step 3 Define the end state and select properties you 
+            would like to transition**/
+            #box:hover{
+                background-color: green;
+                height: 300px;
+                width: 300px;
+                border-radius: 180px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--Select the element step 1-->
+        <div id="box"></div>
+    </body>
+</html>
