@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+       <head>
+	
+		<title>Incorporating JS - INLINE </title>
+	</head>
+	<body>
+        <!--Inline Javascript using Event attributes-->
+	<div id="clickme" onmouseover='window.prompt("Hello, JavaScript is easy with practice"); document.body.style.backgroundColor = "blue";'> Click Me </div>
+
+        <!--Internal Javascript -->
+        <script>
+            document.getElementById('clickme').addEventListener('click', function(){
+                window.alert("Hello, JavaScript is easy with practice coming from internal css"); 
+                document.body.style.backgroundColor = "#cd0000";
+                document.body.style.color = 'white';
+            });
+
+            var bucket; //Declare a variable
+
+            bucket = "cool string"; //Initializing the variable
+
+            /**This Can
+            be put
+            on separate lines
+            **/
+        </script>
+	</body>
+</html>
