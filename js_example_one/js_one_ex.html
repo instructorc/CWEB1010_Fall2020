@@ -11,7 +11,7 @@
                 background-size: 100%;
                 font-family: monospace;
             }
-            aside, summary{
+            aside,#getForm{
                 min-width:500px;
                 max-width: 600px;
                 margin: auto;
@@ -37,8 +37,20 @@
                 color: black;
                 background-color: #ffffffc2;
             }
-            form{
+            #entryform{
                 display: none;
+                min-width:500px;
+                max-width: 600px;
+                margin: auto;
+                margin-top: 3%;
+                padding: 2%;
+ 
+                text-align: center;
+                font-size: 20px;
+            }
+            input{
+                border: 2px solid black;
+               
             }
         </style>
 	</head>
@@ -46,9 +58,17 @@
         <!--Inline JS-->
         <div id="flex_container">
             <aside> Click Here to Show Today's Date! </aside>
-            <summary id="getForm">Click to show student Data</summary>
+            <div id="getForm">Click to show student Data</div>
+            <form action="" method="" id="entryform">
+                <label>Enter Name</label>
+                <input type="text" placeholder="Enter Name" >
+                <label>Select Age:</label>
+                <input type="number" min="0" max="150">
+                <input type="button" value="submit"/>
 
-            </details>
+            </form>
+
+            
             <section id="general">
                 <h1 id="date_output"></h1>
                 <div id="student_info"></div>
@@ -76,13 +96,34 @@
             
             let now = new  Date();
 
-            document.getElementsByTagName('aside')[0].addEventListener('click', function(){
-                document.getElementById('date_output').innerHTML = "<h2>Today's Date</h2> \n <h3>" + now + " </h3>";
+           document.getElementsByTagName('aside')[0].addEventListener('click', dateOutput);
+
+            document.getElementById('getForm').addEventListener('click', ()=>{
+              
+                var yearsLeft = getRemainYearsUntilRetirement(student.age); //calling or involking a function
+                document.getElementById('student_info').innerHTML = `<h3>Student Name: ${student.name} \n Age: ${age} Years left until retirement: ${yearsLeft} </h3> `;
             })
 
-            document.getElementById('getForm').addEventListener('click', function(){
-                document.getElementById('student_info').innerHTML = `<h3>Student Name: ${student.name} \n Age: ${age} </h3>`;
-            })
+            //Named Function
+            function dateOutput(){
+                var textOutput = "<h2>Today's Date</h2> \n <h3>" + now + " </h3>";
+                console.log(textOutput);
+                document.getElementById('date_output').innerHTML = textOutput;
+            }
+
+            //Defining a Named Function 1 step is to define your function
+            function getRemainYearsUntilRetirement(currentAge){
+                //Local variable
+                var RETIREMENT_AGE = 65; //constant
+                var remainingYears;
+
+                //Calculation of years left until retirement
+                remainingYears = RETIREMENT_AGE - currentAge;
+
+                return remainingYears;
+            }
+
+      
             
             
          
