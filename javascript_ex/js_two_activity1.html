@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+       <head>
+	
+		<title>Working with named Functions</title>
+	</head>
+	<body>
+	    <div onclick="pageDetails()"> Click Me </div>
+
+
+        <!--Internal JS-->
+        <script>
+            //Define the function
+            function pageDetails(){
+
+                var docTitle = document.title;
+                var docURL = document.URL;
+
+
+                window.alert(docTitle + " " + docURL);
+            }
+
+        </script>
+	</body>
+</html>
