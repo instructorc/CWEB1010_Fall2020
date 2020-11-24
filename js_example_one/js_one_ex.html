@@ -61,10 +61,10 @@
             <div id="getForm">Click to show student Data</div>
             <form action="" method="" id="entryform">
                 <label>Enter Name</label>
-                <input type="text" placeholder="Enter Name" >
+                <input type="text" id="name" placeholder="Enter Name" >
                 <label>Select Age:</label>
-                <input type="number" min="0" max="150">
-                <input type="button" value="submit"/>
+                <input type="number"  id="age" min="0" max="150">
+                <input type="button" id="submitform" value="submit"/>
 
             </form>
 
@@ -76,32 +76,40 @@
         </div>
 		<!--Internal JS -->
         <script> 
-            var student;
-            var student = "Joe";  //String data type
-            
-            student = "Joe";
-            var age = 55; //numeric data type or interger data type
-            var isFound = false; //boolean
-            var institution = null;
-            var semester;
-            var textBooks = ["Math Book", "Comp. Sci Book", "Networking Book"];
+            //User defined Student Object
             var student = {
                         name : "Joe",
                         age: 55,
                         isFound: false,
                         institution: null,
-                        semester: null
-
-                        };
+                        semester: null,
+                        remainingYears: 0,
+                        textBooks: ["Math Book", "Comp. Sci Book", "Networking Book"],
+                        getYearsRemaining: function(){
+                            var RETIREMENT_AGE = 65; //constant
+                            //Calculation of years left until retirement
+                            this.remainingYears = RETIREMENT_AGE - this.age;
+                        },
+                        outputData: function(){
+                            document.getElementById('student_info').innerHTML = `<h3>Student Name: ${this.name} \n Age: ${this.age} Years left until retirement: ${this.remainingYears} </h3> `;
+                        }
+                    };
             
             let now = new  Date();
 
            document.getElementsByTagName('aside')[0].addEventListener('click', dateOutput);
 
             document.getElementById('getForm').addEventListener('click', ()=>{
+                    document.getElementById('entryform').style.display = "block";
               
-                var yearsLeft = getRemainYearsUntilRetirement(student.age); //calling or involking a function
-                document.getElementById('student_info').innerHTML = `<h3>Student Name: ${student.name} \n Age: ${age} Years left until retirement: ${yearsLeft} </h3> `;
+            })
+
+            document.getElementById('submitform').addEventListener('click', function(){
+                student.name = document.getElementById('name').value;
+                student.age = document.getElementById('age').value;
+
+                student.getYearsRemaining();
+                student.outputData();
             })
 
             //Named Function
@@ -111,17 +119,6 @@
                 document.getElementById('date_output').innerHTML = textOutput;
             }
 
-            //Defining a Named Function 1 step is to define your function
-            function getRemainYearsUntilRetirement(currentAge){
-                //Local variable
-                var RETIREMENT_AGE = 65; //constant
-                var remainingYears;
-
-                //Calculation of years left until retirement
-                remainingYears = RETIREMENT_AGE - currentAge;
-
-                return remainingYears;
-            }
 
       
             
