@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS three Activity</title>
+    </head>
+    <body>
+
+
+
+        <script>
+            var MONTH_END = 12;
+            var maxDayCount = 31;
+            var FEB_COUNT = 28;
+            var THIRTY_DAY_COUNT = 30;
+
+            //Declare an array that holds the months
+            var months = ["Jan.", "Feb.","Mar.", "April","May","June","July","Aug","Sept.",
+            "Oct.","Nov.", "Dec."];
+            //First Looping Structure is going iterate through the months array
+            for(var x=0; x < months.length; x++){
+
+                //Sequence Structure
+                console.log(months[x]);
+
+                let i = 1; 
+                maxDayCount = 31;
+                //Second Looping Structure that is going to iterate through the days of the months
+                while(i <= maxDayCount){
+                    //Selection Structure
+                    if(x == 1){
+                        //Sequence Structure
+                        maxDayCount = FEB_COUNT;
+                    }else if(x == 3 || x == 5 || x == 6 || x == 10){
+                        //Sequence Structure
+                        maxDayCount = THIRTY_DAY_COUNT;
+                    }
+                    //Sequence Structure
+                    console.log(i);
+
+                    i++;
+                }
+            }
+               
+        </script>
+    </body>
+</html>
