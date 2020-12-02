@@ -62,8 +62,8 @@
             <form action="" method="" id="entryform">
                 <label>Enter Name</label>
                 <input type="text" id="name" placeholder="Enter Name" >
-                <label>Select Age:</label>
-                <input type="number"  id="age" min="0" max="150">
+                <label>Credits:</label>
+                <input type="number"  id="credits" min="0" max="24">
                 <input type="button" id="submitform" value="submit"/>
 
             </form>
@@ -79,19 +79,25 @@
             //User defined Student Object
             var student = {
                         name : "Joe",
-                        age: 55,
+                        credits: 55,s
                         isFound: false,
                         institution: null,
                         semester: null,
-                        remainingYears: 0,
+                        studentStatus: "",
                         textBooks: ["Math Book", "Comp. Sci Book", "Networking Book"],
-                        getYearsRemaining: function(){
-                            var RETIREMENT_AGE = 65; //constant
-                            //Calculation of years left until retirement
-                            this.remainingYears = RETIREMENT_AGE - this.age;
+                        getStudentStatus: function(){
+                            var statusArray = ["Part-time","Full-time", "Non Credit Seeking"];
+
+                            //Make a decision
+                            if(this.credits >= 12){
+                                this.studentStatus = statusArray[1];
+                            }else{
+                                this.studentStatus = statusArray[0];
+                            }
+
                         },
                         outputData: function(){
-                            document.getElementById('student_info').innerHTML = `<h3>Student Name: ${this.name} \n Age: ${this.age} Years left until retirement: ${this.remainingYears} </h3> `;
+                            document.getElementById('student_info').innerHTML = `<h3>Student Name: ${this.name} \n Credits: ${this.credits} Student Status: ${this.studentStatus} </h3> `;
                         }
                     };
             
@@ -106,9 +112,9 @@
 
             document.getElementById('submitform').addEventListener('click', function(){
                 student.name = document.getElementById('name').value;
-                student.age = document.getElementById('age').value;
+                student.credits= document.getElementById('credits').value;
 
-                student.getYearsRemaining();
+                student.getStudentStatus();
                 student.outputData();
             })
 
