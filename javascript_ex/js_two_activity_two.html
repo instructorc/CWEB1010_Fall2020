@@ -73,7 +73,7 @@
         <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p>
 
         <div class="container">
-        <form action="/action_page.php" method="POST">
+        <form method="POST">
             <div class="row">
                 <div class="col-25">
                 <label for="fname">First Name</label>
@@ -107,13 +107,36 @@
                 <label for="subject">Subject</label>
                 </div>
                 <div class="col-75">
-                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                  <input type="text" id="subject" name="subject" placeholder="Enter Subject">
                 </div>
             </div>
             <div class="row">
-                <input type="submit" value="Submit">
+                <input type="submit" id="submit" value="Submit">
             </div>
         </form>
         </div>
+        <div id="output"></div>
+        <script>
+
+            var person ={
+                firstName: "",
+                lastName: "", 
+                country: "",
+                subject: "",
+                outputInfo: function(){
+
+                  return `<h2> First Name: ${this.firstName} Last Name: ${this.lastName} Subject: ${this.subject}</h2>`;
+                }
+            };
+            document.getElementById('submit').addEventListener('click', function(){
+                
+                person.firstName = document.getElementById('fname').value;
+                person.lastName = document.getElementById('lname').value;
+                person.subject = document.getElementById('subject').value;
+                document.getElementById('output').innerHTML = person.outputInfo();
+                event.preventDefault();
+            });
+           
+        </script>
     </body>
 </html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Three Activity</title>
+    </head>
+    <body>
+
+
+
+        <script>
+
+            var MAX_DAY_COUNT = 31; //constant value
+            var FEB_COUNT = 28;
+            var maxDayCount = 31;
+            var THIRTY_DAY_COUNT = 30;
+            //Declare an array that holds each of the month names
+            var months = ["Jan.","Feb.","Mar.","April","May","Jun.","July","Aug.","Sept.", "Oct.","Nov.", "Dec."];
+            
+            //Looping Structure - That outputs each month
+            for(var x = 0; x < months.length; x++){
+                console.log(months[x]);
+                //Inner Looping Structure that outputs the days
+                maxDayCount = MAX_DAY_COUNT;
+                for(var i = 1; i <= maxDayCount; i++ ){
+                
+                    //Selection Structure that outputs the corresponding days
+                    if(x == 1){
+                        maxDayCount = FEB_COUNT;
+                    }else if( x == 3 || x == 5 || x == 8 || x==10){
+                        maxDayCount = THIRTY_DAY_COUNT;
+                    }
+
+                    console.log(i);  //Sequence Structure
+                }
+                  
+            }
+
+
+            
+        </script>
+    </body>
+</html>
