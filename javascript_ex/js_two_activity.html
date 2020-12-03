@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        }
+
+        input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+        background-color: #45a049;
+        }
+
+        div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        }
+        </style>
+    </head>
+    <body>
+
+        <h3>Using CSS to style an HTML Form</h3>
+
+        <div>
+            <form>
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" maxLength="20" required name="firstname" placeholder="Your name..">
+
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                <label for="credits">Enter # of credits</label>
+                <input type="text" id="credits" name="credits" placeholder="Enter Credits..">
+            
+                <input type="submit" id="submit" value="Submit">
+            </form>
+        </div>
+        <div id="output"></div>
+        <!--Internal JavaScript-->
+        <script>
+
+            var statusList = ["Full-Time", "Part-Time", "Non-Degree Seeking"];
+            var student = {
+                            firstName: "",
+                            lastName: "",
+                            creditCount: 0,
+                            studentStatus: "",
+                            calculateStatus: function(){
+
+                                //Selection Structure
+                                if(this.creditCount >= 12){
+                                    this.studentStatus = statusList[0];
+                                }else{
+                                    this.studentStatus = statusList[1];
+                                }
+
+                            },
+                            outputStudentInfo: function(){
+                                return `FirstName: ${this.firstName} LastName: ${this.lastName} Credits: ${this.creditCount} Status: ${this.studentStatus}`;
+                            }
+                        }
+            document.getElementById('submit').addEventListener('click', ()=>{
+                student.firstName = document.getElementById('fname').value;
+                student.lastName = document.getElementById('lname').value;
+                student.creditCount = document.getElementById('credits').value;
+                student.calculateStatus();
+                document.getElementById('output').innerHTML = student.outputStudentInfo();
+                event.preventDefault();
+
+            })
+            
+
+
+        </script>
+    </body>
+</html>
