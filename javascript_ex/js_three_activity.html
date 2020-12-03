@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+    input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+
+    input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+    background-color: #45a049;
+    }
+
+    div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    }
+    </style>
+</head>
+<body>
+
+    <h3>Using CSS to style an HTML Form</h3>
+
+    <div>
+    <form>
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+        <label for="credits">Enter Credits:</label>
+        <input type="text" id="credits" name="credits" placeholder="Enter # of Credits..">
+
+        <label for="color">Pick your T-shirt color</label>
+        <input type="color" id="colortype" onChange="changeBackgroundColor()" name="colortype">       
+    
+        <input type="submit" id="submit" value="Submit">
+    </form>
+    <div id="output"></div>
+    </div>
+
+    <script>
+      
+        var studentStatus = ["Full-Time", "Part-Time", "Non-Degree Seeking"];
+        var student = {
+                    firstName: "",
+                    lastName: "",
+                    numOfCredits: 0,
+                    status: "",
+
+                    determineStatus : function(){
+                        //Decision Logic
+                        if(this.numOfCredits >= 12){
+                            this.status = studentStatus[0];
+                        }else{
+                            this.status = studentStatus[1];
+                        }
+                    },
+
+                    outputStudentInfo: function(){
+                        return `<h2>First Name: ${this.firstName} Last Name: ${this.lastName} Credits: ${this.numOfCredits} Status ${this.status}`
+                    }
+        }
+
+        document.getElementById('submit').addEventListener('click', grabStuff);
+
+        function grabStuff(){
+            
+            student.firstName = document.getElementById('fname').value;
+            student.lastName = document.getElementById('lname').value;
+            student.numOfCredits = document.getElementById('credits').value;
+            student.determineStatus();
+            document.getElementById('output').innerHTML = student.outputStudentInfo();
+            event.preventDefault();
+        
+        }
+
+        function changeBackgroundColor(){
+
+            var userColorSelection = document.getElementById('colortype').value;
+            document.getElementById('submit').style.backgroundColor = userColorSelection;
+        }
+
+
+    </script>
+
+</body>
+</html>
