@@ -51,7 +51,11 @@
 
         <label for="color">Pick your T-shirt color</label>
         <input type="color" id="colortype" onChange="changeBackgroundColor()" name="colortype">       
-    
+        <label for="program">Select Program:</label>
+        <select name="program" id="program" onchange="displayProgramPage()">
+            <option value="network">Networking</option>
+            <option value="wepapps">Web Development</option>
+        </select>
         <input type="submit" id="submit" value="Submit">
     </form>
     <div id="output"></div>
@@ -97,6 +101,19 @@
 
             var userColorSelection = document.getElementById('colortype').value;
             document.getElementById('submit').style.backgroundColor = userColorSelection;
+        }
+
+        function displayProgramPage(){
+
+            var programSelection = document.getElementById('program').value;
+
+            if(programSelection == "network"){
+                window.open('https://dunwoody.edu/computer/computer-networking-systems/');
+            }
+
+            if(programSelection == "wepapps"){
+                window.open('https://dunwoody.edu/computer/web-programming-database-development/');
+            }
         }
 
 
